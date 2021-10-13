@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/main.js"></script>
+    <script src="js/sign-up.js"></script>
+  </head>
+  <body class="flex-center flex-column min-vh-100 bg-light">
+    <div class="box-auth">
+      <div class="text-center">
+        <div class="mb-3 w-50 mx-auto">
+          <img
+            src="https://freshgarden.vn/pic/Video/log_636790835426168936_HasThumb_Thumb.png"
+            alt="logo"
+            class="img-fluid"
+          />
+        </div>
+        <p>
+          Start creating the best possible user experience for you customers.
+        </p>
+      </div>
+      <div class="shadow rounded-3 p-4 bg-white">
+        <div class="text-center">
+          <i
+            class="
+              bi bi-brightness-alt-high-fill
+              d-inline-block
+              fs-1
+              text-primary
+            "
+          ></i>
+          <h1 class="fs-2 fw-light mb-5">Sign Up</h1>
+        </div>
+        <form id="form-sign-up" action="" method="POST">
+          <div class="form-floating mb-3">
+            <input
+              class="form-control"
+              id="firstName"
+              name="firstName"
+              placeholder="first-name"
+            />
+            <label for="firstName"
+              >First name <span class="text-danger">*</span></label
+            >
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              class="form-control"
+              id="lastName"
+              name="lastName"
+              placeholder="last-name"
+            />
+            <label for="lastName"
+              >Last name <span class="text-danger">*</span></label
+            >
+          </div>
+          <div class="form-floating mb-3">
+            <input class="form-control" id="phone" placeholder="phone" />
+            <label for="phone">Phone number </label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="email"
+            />
+            <label for="email"
+              >Email address <span class="text-danger">*</span></label
+            >
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              placeholder="password"
+            />
+            <label for="password"
+              >Password <span class="text-danger">*</span></label
+            >
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="password"
+              class="form-control"
+              id="passwordConfirm"
+              name="passwordConfirm"
+              placeholder="confirm-password"
+            />
+            <label for="passwordConfirm"
+              >Confirm password <span class="text-danger">*</span></label
+            >
+          </div>
+          <button class="btn btn-primary w-100 btn-lg text-white" type="submit">
+            Sign Up
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div
+      class="toast align-items-center text-white bg-danger border-0"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      id="toast"
+    >
+      <div class="d-flex">
+        <div class="toast-body">Email đã tồn tại.</div>
+        <button
+          type="button"
+          class="btn-close btn-close-white me-2 m-auto"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
+  </body>
+</html>
