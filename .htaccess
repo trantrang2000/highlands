@@ -1,0 +1,103 @@
+RewriteEngine On
+
+#----------
+#client 
+
+#about
+RewriteRule ^about$ index.php?controller=About
+
+#checkout
+RewriteRule ^checkout$ index.php?controller=Checkout
+
+#order-success
+RewriteRule ^order-success$ index.php?controller=OrderSuccess
+
+#product
+RewriteRule ^product/([0-9]+) index.php?controller=ProductDetail&id=$1
+
+#category-product
+RewriteRule ^category-product/([^/]+) index.php?controller=CategoryProduct&id=$1&page=$2
+
+#category-news
+RewriteRule ^category-news/([^/]+) index.php?controller=CategoryNews&id=$1&page=$2
+
+#news
+RewriteRule ^news/([0-9]+) index.php?controller=NewsDetail&id=$1
+
+#search
+RewriteRule ^search index.php?controller=Search
+
+#cart
+RewriteRule ^cart$ index.php?controller=Cart
+RewriteRule ^cart/add index.php?controller=Cart&action=add
+RewriteRule ^cart/destroy index.php?controller=Cart&action=destroy
+RewriteRule ^cart/delete/([0-9]+) index.php?controller=Cart&action=delete&id=$1
+
+#my order
+RewriteRule ^my/orders$ index.php?controller=MyOrder
+RewriteRule ^my/order/cancel_order/([0-9]+)$ index.php?controller=MyOrder&action=cancel_order&id=$1
+
+#----------
+#auth
+
+#logout
+RewriteRule ^admin/logout$ admin.php?controller=Logout&type=auth
+
+#sign in
+RewriteRule ^sign-in$ admin.php?controller=SignIn&type=auth
+
+#sign up
+RewriteRule ^sign-up$ admin.php?controller=SignUp&type=auth
+
+#----------
+#admin
+
+RewriteRule ^admin$ admin.php
+
+#banner
+RewriteRule ^admin/banners/([0-9]+)$ admin.php?controller=Banner&page=$1
+RewriteRule ^admin/banner/create$ admin.php?controller=Banner&action=create
+RewriteRule ^admin/banner/do_create$ admin.php?controller=Banner&action=do_create
+RewriteRule ^admin/banner/edit/([0-9]+)$ admin.php?controller=Banner&action=show&id=$1
+RewriteRule ^admin/banner/update/([0-9]+)$ admin.php?controller=Banner&action=update&id=$1
+RewriteRule ^admin/banner/delete/([0-9]+)$ admin.php?controller=Banner&action=delete&id=$1
+
+#category-product 
+RewriteRule ^admin/categories-product/([0-9]+)$ admin.php?controller=CategoryProduct&page=$1
+RewriteRule ^admin/category-product/create$ admin.php?controller=CategoryProduct&action=create
+RewriteRule ^admin/category-product/do_create$ admin.php?controller=CategoryProduct&action=do_create
+RewriteRule ^admin/category-product/edit/([0-9]+)$ admin.php?controller=CategoryProduct&action=show&id=$1
+RewriteRule ^admin/category-product/update/([0-9]+)$ admin.php?controller=CategoryProduct&action=update&id=$1
+RewriteRule ^admin/category-product/delete/([0-9]+)$ admin.php?controller=CategoryProduct&action=delete&id=$1
+
+#category-news 
+RewriteRule ^admin/categories-news/([0-9]+)$ admin.php?controller=CategoryNews&page=$1
+RewriteRule ^admin/category-news/create$ admin.php?controller=CategoryNews&action=create
+RewriteRule ^admin/category-news/do_create$ admin.php?controller=CategoryNews&action=do_create
+RewriteRule ^admin/category-news/edit/([0-9]+)$ admin.php?controller=CategoryNews&action=show&id=$1
+RewriteRule ^admin/category-news/update/([0-9]+)$ admin.php?controller=CategoryNews&action=update&id=$1
+RewriteRule ^admin/category-news/delete/([0-9]+)$ admin.php?controller=CategoryNews&action=delete&id=$1
+
+#product
+RewriteRule ^admin/products/([0-9]+)$ admin.php?controller=Product&page=$1
+RewriteRule ^admin/product/create$ admin.php?controller=Product&action=create
+RewriteRule ^admin/product/do_create$ admin.php?controller=Product&action=do_create
+RewriteRule ^admin/product/edit/([0-9]+)$ admin.php?controller=Product&action=show&id=$1
+RewriteRule ^admin/product/update/([0-9]+)$ admin.php?controller=Product&action=update&id=$1
+RewriteRule ^admin/product/delete/([0-9]+)$ admin.php?controller=Product&action=delete&id=$1
+
+#news
+RewriteRule ^admin/news/([0-9]+)$ admin.php?controller=News&page=$1
+RewriteRule ^admin/news/create$ admin.php?controller=News&action=create
+RewriteRule ^admin/news/do_create$ admin.php?controller=News&action=do_create
+RewriteRule ^admin/news/edit/([0-9]+)$ admin.php?controller=News&action=show&id=$1
+RewriteRule ^admin/news/update/([0-9]+)$ admin.php?controller=News&action=update&id=$1
+RewriteRule ^admin/news/delete/([0-9]+)$ admin.php?controller=News&action=delete&id=$1
+
+#order
+RewriteRule ^admin/orders/([0-9]+)$ admin.php?controller=Order&page=$1
+RewriteRule ^admin/order/view/([0-9]+)$ admin.php?controller=Order&action=view&id=$1
+RewriteRule ^admin/order/update_status/([0-9]+)$ admin.php?controller=Order&action=update_status&id=$1
+
+#404
+ErrorDocument 404 http://localhost/fresh-garden/
